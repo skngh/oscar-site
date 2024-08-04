@@ -1,0 +1,70 @@
+.zoom-button {
+    display: inline-block;
+    /* padding: 10px 50px; */
+    /* max-width: 250px;
+    max-height: 70px; */
+    width: 250px;
+    height: 70px;
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    background: no-repeat center center / cover;
+    background-size: 150%; /* initial zoomed-out state */
+    transition: background-size 0.3s ease, filter 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px black;
+    border: 3px solid;
+    filter: grayscale(100%); /* Black and white effect */
+  }
+  .button-text {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 
+        1px 1px 0 black,  
+       -1px -1px 0 black,
+        1px -1px 0 black,
+       -1px  1px 0 black; /* Black border effect */
+  }
+  
+  .zoom-button::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 5px; /* Thickness of the bottom shadow */ 
+    transition: height 0.3s ease;
+  }
+  
+  .zoom-button:hover::after {
+    height: 10px; /* Increase thickness on hover for a more pronounced effect */
+  }
+  
+  .zoom-button:hover {
+    background-size: 170%; /* Zoom-in state */
+    filter: grayscale(0%); /* Remove black and white effect */
+  }
+
+  .zoom-button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+
+  @media(max-width:650px)
+  {
+    .zoom-button {
+        width: 125px;
+        height: 35px;
+    }
+    .button-text {
+        font-size: 20px;
+    }
+  }
