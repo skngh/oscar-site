@@ -1,26 +1,62 @@
-.line {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid black; /* Circle border thickness */
-    border-radius: 50%; /* Makes it a circle */
-
-    border-top-color: transparent;
-    animation: rotate 2.5s linear infinite; /* Rotation animation */
-}
 .circle-container {
     position: absolute;
     top: 50%; 
     left: 50%; 
-    transform: translate(-59%, -59%); 
-    width: 30px; /* Diameter of the circle */
-    height: 30px; /* Diameter of the circle */
+    transform: translate(-49%, -47%); 
 }
-@keyframes rotate {
+.default-circle {
+    display: block;
+    fill: none;
+    stroke: black;
+    stroke-width: 5;
+}
+
+.hide-circle {
+    stroke-dashoffset: 0;
+
+    animation: rotate-and-erase .5s linear forwards;
+}
+@keyframes rotate-and-erase {
+    0% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 240.55, 42.45;
+    }
+    100% {
+        stroke-dashoffset: -210; /* Full negative circumference */
+        stroke-dasharray: 0, 283; /* Increase the gap to the full length */
+    }
+}
+.rotate-circle {
+    stroke-dasharray: 283, 0; 
+    stroke-dashoffset: 283;
+    
+    animation: draw-circle 1s linear forwards, rotate-circle 2s linear infinite, chase 2s linear infinite;
+    animation-delay: 0s, 2s, 0s; 
+}
+@keyframes draw-circle {
     from {
-        transform: rotate(0deg);
+        stroke-dashoffset: -210; /* Full negative circumference */
+        stroke-dasharray: 0, 283; /* Increase the gap to the full length */
     }
     to {
-        transform: rotate(360deg);
+        stroke-dashoffset: 0;
+        stroke-dasharray: 240.55, 42.45;
     }
 }
+@keyframes chase {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -283; /* Full negative circumference to complete the loop */
+    }
+}
+@keyframes rotate-circle {
+    from {
+        stroke-dashoffset: 43;
+    }
+    to {
+        stroke-dashoffset: -240; /* One full rotation relative to the dash array */
+    }
+}
+

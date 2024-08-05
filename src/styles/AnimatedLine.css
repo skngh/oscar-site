@@ -1,0 +1,71 @@
+.animated-line-image {
+    position: absolute;
+    width: 110px;
+    display: block;
+    height: 110px;
+    /* top: 50%; 
+    left: 50%;  
+    transform: translate(-50%, -50%);  */
+    
+    
+}
+.hide-line {
+    fill:transparent;
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+}
+.unanimate-line {
+    fill:transparent;
+    stroke-dasharray: 320;
+    stroke-dashoffset: 160;
+    stroke-width: 3;
+    /* stroke: 1;  */
+    stroke: black;
+
+
+    animation: unanimate-line .5s linear forwards;
+}
+.animate-line {
+    fill:transparent;
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    stroke-width: 3;
+    /* stroke: 1;  */
+    stroke: black;
+
+
+    animation: animate-line .5s linear forwards;
+}
+@keyframes unanimate-line {
+    to {
+        stroke-dashoffset: 320;
+    }
+} 
+
+@keyframes animate-line {
+    to {
+        stroke-dashoffset: 160;
+    }
+} 
+.top-right {
+    top: -2px;
+    left: -25px;
+}
+.bottom-right {
+    transform: scaleY(-1);
+    transform-origin: center;
+    top: -8px;
+    left: -25px;
+}
+.bottom-left {
+    transform: scale(-1, -1);
+    top: -8px;
+    left: -86px;
+    transform-origin: center;
+}
+.top-left {
+    transform: scaleX(-1);
+    top: -2px;
+    left: -86px;
+    transform-origin: center;
+}

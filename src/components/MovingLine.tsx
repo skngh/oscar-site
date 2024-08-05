@@ -1,9 +1,15 @@
 import "../styles/MovingCircle.css";
 
-const MovingLine = () => {
+interface Props {
+  className: string;
+}
+
+const MovingLine = ({ className }: Props) => {
   return (
     <div className="circle-container">
-      <div className="line"></div>
+      <svg width="50" height="50" viewBox="-3 -3 106 106">
+        <circle cx="50" cy="50" r="45" className={className} />
+      </svg>
     </div>
   );
 };
