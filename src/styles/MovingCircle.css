@@ -59,4 +59,9 @@
         stroke-dashoffset: -240; /* One full rotation relative to the dash array */
     }
 }
+@media(max-width:650px) {
+    svg {
+        transform: scale(0.5);
+    }
+}
 

@@ -69,3 +69,26 @@
     left: -86px;
     transform-origin: center;
 }
+@media(max-width:650px)
+{
+    .top-right {
+        top: 10px;
+        left: -40px;
+    }
+    .bottom-right {
+        top: -20px;
+        left: -40px;
+    }
+    .bottom-left {
+
+        top: -20px;
+        left: -70px;
+
+    }
+    .top-left {
+
+        top: 10px;
+        left: -70px;
+
+    }
+}

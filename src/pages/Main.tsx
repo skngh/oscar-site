@@ -1,9 +1,10 @@
-import Header from "../components/Header";
 import Button from "../components/Button";
 import MovingLine from "../components/MovingLine";
 import "../styles/main.css";
 import AnimatedLine from "../components/AnimatedLine";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import transition from "../transition";
 
 const Main = () => {
   const lineStates = ["top-left", "top-right", "bottom-left", "bottom-right"];
@@ -13,53 +14,65 @@ const Main = () => {
     "/test3.png",
     "/test4.png",
   ];
+  const pageName = ["/samples", "/credits", "/pics", "/contact"];
   const textNames = ["SAMPLES", "CREDITS", "PICS", "CONTACT"];
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(-2);
   const [lastSelectedIndex, setLastSelectedIndex] = useState(0);
 
   return (
     <>
-      <Header />
       <div className="container">
         <div className="button-grid">
           {imageLocations.map((img, index) => (
-            <Button
-              key={img}
-              imageUrl={img}
-              onHover={() => setSelectedIndex(index)}
-              onLeave={() => {
-                setSelectedIndex(-1);
-                setLastSelectedIndex(index);
-              }}
-            >
-              {textNames[index]}
-            </Button>
+            <Link to={pageName[index]}>
+              <Button
+                key={img}
+                imageUrl={img}
+                onHover={() => setSelectedIndex(index)}
+                onLeave={() => {
+                  setSelectedIndex(-1);
+                  setLastSelectedIndex(index);
+                }}
+              >
+                {textNames[index]}
+              </Button>
+            </Link>
           ))}
           <div className="circle-container">
             <div className="circle"></div>
-
             <MovingLine
               className={
-                selectedIndex == -1
+                selectedIndex == -1 || selectedIndex == -2
                   ? "default-circle rotate-circle"
                   : "default-circle hide-circle"
               }
             />
             <AnimatedLine
               containerClassName={
-                selectedIndex == -1
+                selectedIndex == -2
+                  ? "hide-line"
+                  : selectedIndex == -1
                   ? "animated-line-image " + lineStates[lastSelectedIndex]
                   : "animated-line-image " + lineStates[selectedIndex]
               }
               className={
-                selectedIndex == -1 ? "unanimate-line" : "animate-line"
+                selectedIndex == -2
+                  ? "hide-line"
+                  : selectedIndex == -1
+                  ? "unanimate-line"
+                  : "animate-line"
               }
             />
           </div>
         </div>
+        {/* <img
+          src="/buttonImageTest.jpg"
+          className="bottom-photo"
+          alt="Fun Photo!"
+        ></img> */}
       </div>
     </>
   );
 };
 
-export default Main;
+export default transition(Main);
