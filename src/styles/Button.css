@@ -4,7 +4,7 @@
     /* max-width: 250px;
     max-height: 70px; */
     width: 250px;
-    height: 70px;
+    height: 90px;
     font-family: "Open Sans", sans-serif;
     color: black;
     background-color: black;
@@ -62,7 +62,7 @@
   {
     .zoom-button {
         width: 125px;
-        height: 35px;
+        height: 45px;
     }
     .button-text {
         font-size: 20px;

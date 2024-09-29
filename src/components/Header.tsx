@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const header = () => {
   return (
     <div className="header">
-      <h1 id="name">OSCAR COMPO</h1>
       <div className="second-header-container">
-        <h2>Producer, Engineer, Songwriter</h2>
-        <div className="vertical-line"></div>
+        <div className="name">OSCAR COMPO</div>
+        <div className="roles">Producer, Engineer, Songwriter</div>
+        {/* <div className="vertical-line"></div> */}
         <div className="icon-container">
           <a href="https://www.instagram.com/isthisoscarzc/" target="_blank">
             <img
@@ -26,14 +26,13 @@ const header = () => {
               alt="Linkedin"
             />
           </a>
-        </div>
-        <div>
           <Link className="home-button" to="/">
             HOME
           </Link>
         </div>
+        <div></div>
       </div>
-      <div className="full-width-line"></div>
+      {/* <div className="full-width-line"></div> */}
     </div>
   );
 };

@@ -24,19 +24,21 @@ const Main = () => {
       <div className="container">
         <div className="button-grid">
           {imageLocations.map((img, index) => (
-            <Link to={pageName[index]}>
-              <Button
-                key={img}
-                imageUrl={img}
-                onHover={() => setSelectedIndex(index)}
-                onLeave={() => {
-                  setSelectedIndex(-1);
-                  setLastSelectedIndex(index);
-                }}
-              >
-                {textNames[index]}
-              </Button>
-            </Link>
+            <div className="grid-button">
+              <Link to={pageName[index]}>
+                <Button
+                  key={img}
+                  imageUrl={img}
+                  onHover={() => setSelectedIndex(index)}
+                  onLeave={() => {
+                    setSelectedIndex(-1);
+                    setLastSelectedIndex(index);
+                  }}
+                >
+                  {textNames[index]}
+                </Button>
+              </Link>
+            </div>
           ))}
           <div className="circle-container">
             <div className="circle"></div>
@@ -65,11 +67,6 @@ const Main = () => {
             />
           </div>
         </div>
-        {/* <img
-          src="/buttonImageTest.jpg"
-          className="bottom-photo"
-          alt="Fun Photo!"
-        ></img> */}
       </div>
     </>
   );
