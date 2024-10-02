@@ -21,7 +21,7 @@ const Socials: React.FC<HoverableComponentProps> = ({
               target="_blank"
             >
               <img
-                src="../../public/linkedin.png"
+                src="./linkedin.png"
                 alt="LinkedIn"
                 className="social-icon"
               />
