@@ -1,0 +1,16 @@
+.contact-container {
+    border: 2px solid black;
+    width: 300px;
+    height: 100px;
+    margin-top: -90px;
+    filter: grayscale(100%); /* Make everything black and white */
+    transition: filter 0.3s ease; /* Smooth transition */
+  }
+  .contact-container:hover {
+      filter: grayscale(0%); /* Revert to original colors on hover */
+}
+
+.email-text {
+    text-align: left;
+    margin-left: 15px;
+}

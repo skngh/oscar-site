@@ -7,8 +7,7 @@ const header = () => {
       <div className="second-header-container">
         <div className="name">OSCAR COMPO</div>
         <div className="roles">Producer, Engineer, Songwriter</div>
-        {/* <div className="vertical-line"></div> */}
-        <div className="icon-container">
+        {/* <div className="icon-container">
           <a href="https://www.instagram.com/isthisoscarzc/" target="_blank">
             <img
               className="social-icons"
@@ -26,13 +25,9 @@ const header = () => {
               alt="Linkedin"
             />
           </a>
-          <Link className="home-button" to="/">
-            HOME
-          </Link>
-        </div>
+        </div> */}
         <div></div>
       </div>
-      {/* <div className="full-width-line"></div> */}
     </div>
   );
 };

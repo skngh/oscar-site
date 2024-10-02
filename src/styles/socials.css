@@ -1,0 +1,45 @@
+.socials-container {
+    position: relative;
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    filter: grayscale(100%); /* Make everything black and white */
+  transition: filter 0.3s ease; /* Smooth transition */
+}
+.socials-container:hover {
+    filter: grayscale(0%); /* Revert to original colors on hover */
+  }
+
+.socials-grid {
+    display: flex;
+    height: 100%; /* Make sure the container spans the full height of the parent */
+  width: 100%; /* Full width of the parent container */
+
+}
+.social-links {
+    flex: 1;
+    margin-top: 100px;
+    display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+
+  /* width: 50%; */
+  padding: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 50%; /* Take up the right half of the container */
+  height: 300px; /* Full height to cover the container */
+}
+.instagram-widget {
+    position: absolute;
+    border-left: 2px solid black;
+    top: 0; /* Align it at the top of the container */
+  right: 0; /* Align it on the right */
+  width: 50%; /* Take up the right half of the container */
+  height: 100%; /* Full height to cover the container */
+  z-index: 0; /* Lower z-index than the header so it's behind it */
+  overflow: auto; /* Allow scrolling if necessary */
+    flex: 1;
+    overflow: hidden;
+}

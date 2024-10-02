@@ -2,7 +2,18 @@
     position: absolute;
     top: 50%; 
     left: 50%; 
-    transform: translate(-49%, -47%); 
+    transform: translate(-50%, -50%);  
+    /* position: absolute; 
+    top: 50px; 
+    left: 50%; 
+    transform: translateX(-50%);  */
+    
+}
+.moving-circle-container {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);  
 }
 .default-circle {
     display: block;

@@ -48,24 +48,24 @@
     }
 } 
 .top-right {
-    top: -2px;
+    top: -4px;
     left: -25px;
 }
 .bottom-right {
     transform: scaleY(-1);
     transform-origin: center;
-    top: -8px;
+    top: -10px;
     left: -25px;
 }
 .bottom-left {
     transform: scale(-1, -1);
-    top: -8px;
+    top: -10px;
     left: -86px;
     transform-origin: center;
 }
 .top-left {
     transform: scaleX(-1);
-    top: -2px;
+    top: -4px;
     left: -86px;
     transform-origin: center;
 }

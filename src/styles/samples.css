@@ -1,0 +1,48 @@
+.sample-container {
+    border: 2px solid black;
+    width: 400px;
+    height: 300px;
+    overflow: scroll;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    
+  }
+  .sample-container:hover {
+      filter: grayscale(0%);
+      
+}
+.sample-header {
+    position: fixed;
+}
+.audio-player-container {
+
+    opacity: 10%;
+    transition: opacity 0.3s ease;
+    
+}
+.audio-player-container:hover {
+    opacity: 100%;
+}
+
+.rhap_container {
+    box-shadow: none !important;
+}
+.rhap_volume-container {
+
+    display: none;
+}
+.rhap_container svg {
+    color: rgb(84, 157, 240);
+}
+.rhap_progress-indicator {
+    color: rgb(84, 157, 240);
+}
+.rhap_repeat-button {
+    display: none;
+}
+.song-names {
+    text-align: left;
+    margin-left: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}

@@ -1,8 +1,27 @@
 import React from "react";
-import transition from "../transition";
+import "../styles/contact.css";
 
-const Contact = () => {
-  return <h1>Contact</h1>;
+type HoverableComponentProps = {
+  onMouseEnter: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onMouseLeave: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
-export default transition(Contact);
+const Contact: React.FC<HoverableComponentProps> = ({
+  onMouseEnter,
+  onMouseLeave,
+}) => {
+  return (
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div className="contact-container">
+        <div className="page-header">CONTACT</div>
+        <div className="email-text">
+          <a href="mailto:oscarcompo1@gmail.com?subject=Contact Form">
+            oscarcompo1@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

@@ -1,7 +1,45 @@
-import transition from "../transition";
+import React from "react";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
+import "../styles/samples.css";
 
-const Samples = () => {
-  return <h1>Samples</h1>;
+type HoverableComponentProps = {
+  onMouseEnter: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onMouseLeave: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
-export default transition(Samples);
+const samplesLocations = [
+  "song.mp3",
+  "song.mp3",
+  "song.mp3",
+  "song.mp3",
+  "song.mp3",
+];
+const sampleNames = ["mySong!", "mysong2", "mysong3", "mysong4", "mysong5"];
+
+const Samples: React.FC<HoverableComponentProps> = ({
+  onMouseEnter,
+  onMouseLeave,
+}) => {
+  return (
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div className="sample-container">
+        <div className="page-header">SAMPLES</div>
+        <div className="audio-player-container">
+          {samplesLocations.map((loc, index) => (
+            <>
+              <div className="song-names">{sampleNames[index]}</div>
+              <AudioPlayer
+                src={"../../public/" + loc}
+                showJumpControls={false}
+                showDownloadProgress={false}
+              ></AudioPlayer>
+            </>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Samples;

@@ -9,12 +9,32 @@
     padding: 0;
     
 }
+.social-icon {
+  height: 50px;
+}
+.page-header {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  position: relative;
+  /* text-decoration: underline; */
+  text-align: left;
+  margin: 15px;
+  font-size: 20px;
+}
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(2, 150px); /* 2 columns, adjust width as needed */
-    grid-template-rows: repeat(2, 60px); /* 2 rows, adjust height as needed */
-    gap: 200px; 
-    position: relative; /* Allows positioning of the circle div */
+    /* grid-template-columns: repeat(2, 500px); 
+    grid-template-rows: repeat(2, 200px);  */
+    grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns */
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 300px;
+    place-items: center;
+    justify-content: center; /* Horizontally centers the grid */
+    align-items: center; /* Vertically centers the grid */
+    position: relative; /* Relative to the parent container */
+    /* height: 60vh; */
+    margin-top: -170px;
+   
 } 
 .grid-button {
   display: flex;
@@ -28,10 +48,12 @@
     border-radius: 50%; /* Makes the div a circle */
     background-color: transparent; /* Makes the inside of the circle transparent */
     display: inline-block; 
-    position: absolute; /* Allows positioning in the center */
+    position: absolute; 
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -55%); 
+
+    
 }
 .button-grid Button {
     justify-self: center;
