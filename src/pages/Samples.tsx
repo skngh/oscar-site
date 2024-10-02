@@ -30,7 +30,7 @@ const Samples: React.FC<HoverableComponentProps> = ({
             <>
               <div className="song-names">{sampleNames[index]}</div>
               <AudioPlayer
-                src={"/audio" + loc}
+                src={"/audio/" + loc}
                 showJumpControls={false}
                 showDownloadProgress={false}
               ></AudioPlayer>
