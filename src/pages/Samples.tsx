@@ -24,7 +24,7 @@ const Samples: React.FC<HoverableComponentProps> = ({
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div className="sample-container">
-        <div className="page-header">SAMPLES</div>
+        <div className="page-header sample-header">SAMPLES</div>
         <div className="audio-player-container">
           {samplesLocations.map((loc, index) => (
             <>
